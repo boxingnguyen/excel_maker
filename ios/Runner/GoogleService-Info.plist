@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>869379399913-b5qdqd89r9l2128l2fq8e4h2ijtcsu7q.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.869379399913-b5qdqd89r9l2128l2fq8e4h2ijtcsu7q</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD6F3feWHbJDy03CsAoMMBYfy5-ZoXmH9E</string>
+	<key>GCM_SENDER_ID</key>
+	<string>869379399913</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>boxing.nguyen.excel.maker</string>
+	<key>PROJECT_ID</key>
+	<string>excel-maker-a0e2f</string>
+	<key>STORAGE_BUCKET</key>
+	<string>excel-maker-a0e2f.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:869379399913:ios:4590a4bfa1eadf30731078</string>
+</dict>
+</plist>

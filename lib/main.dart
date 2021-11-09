@@ -1,12 +1,4 @@
-import 'dart:async';
-import 'dart:typed_data';
-
 import 'package:flutter/material.dart';
-import 'package:chirp_flutter/chirp_flutter.dart';
-import 'package:my_app/qr_scan.dart';
-import 'package:simple_permissions/simple_permissions.dart';
-
-import 'chirp.dart';
 
 void main() => runApp(MyApp());
 
@@ -22,7 +14,7 @@ class _MyAppState extends State<MyApp> with WidgetsBindingObserver {
       theme: ThemeData(
         fontFamily: 'Calibre',
       ),
-      home: Scaffold(body: QrScan()),
+      home: Scaffold(body: Text('Hello world')),
     );
   }
 }

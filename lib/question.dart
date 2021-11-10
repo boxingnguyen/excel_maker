@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:my_app/main.dart';
 
 class Question extends StatelessWidget {
   final questionText;

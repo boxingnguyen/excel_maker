@@ -1,0 +1,46 @@
+{
+  "project_info": {
+    "project_number": "869379399913",
+    "project_id": "excel-maker-a0e2f",
+    "storage_bucket": "excel-maker-a0e2f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:869379399913:android:b3fbff2e6eabd6f4731078",
+        "android_client_info": {
+          "package_name": "boxing.nguyen.exel.maker"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "869379399913-40pg4jc0pq6g1lg40797b09et4nb2060.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCtmD8KUc1KEHYQHNlZhmnHTmodfx_XZWA"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "869379399913-40pg4jc0pq6g1lg40797b09et4nb2060.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "869379399913-b5qdqd89r9l2128l2fq8e4h2ijtcsu7q.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "boxing.nguyen.excel.maker"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

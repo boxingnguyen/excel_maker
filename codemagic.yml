@@ -1,0 +1,64 @@
+# Automatically generated on 2021-11-10 UTC from https://codemagic.io/app/618a4b3b2e7fc3e431dd1aa2/settings
+# Note that this configuration is not an exact match to UI settings. Review and adjust as necessary.
+
+workflows:
+  default-workflow:
+    name: Default Workflow
+    max_build_duration: 60
+    environment:
+      flutter: 2.2.3
+      xcode: latest
+      cocoapods: default
+    scripts:
+      - |
+        # set up debug keystore
+        rm -f ~/.android/debug.keystore
+        keytool -genkeypair \
+          -alias androiddebugkey \
+          -keypass android \
+          -keystore ~/.android/debug.keystore \
+          -storepass android \
+          -dname 'CN=Android Debug,O=Android,C=US' \
+          -keyalg 'RSA' \
+          -keysize 2048 \
+          -validity 10000
+      - |
+        # set up local properties
+        echo "flutter.sdk=$HOME/programs/flutter" > "$FCI_BUILD_DIR/android/local.properties"
+      - flutter packages pub get
+      - 'flutter '
+      - flutter pub global run dart_code_metrics:metrics analyze lib
+      - flutter build appbundle --debug
+      - |
+        # generate universal apk signed with debug key
+        android-app-bundle build-universal-apk \
+          --bundle build/**/outputs/**/*.aab \
+          --ks ~/.android/debug.keystore \
+          --ks-pass android \
+          --ks-key-alias androiddebugkey \
+          --key-pass android
+      - find . -name "Podfile" -execdir pod install \;
+      - flutter build ios --debug --no-codesign
+    artifacts:
+      - build/**/outputs/apk/**/*.apk
+      - build/**/outputs/bundle/**/*.aab
+      - build/**/outputs/**/mapping.txt
+      - build/ios/ipa/*.ipa
+      - /tmp/xcodebuild_logs/*.log
+      - flutter_drive.log
+    publishing:
+      email:
+        recipients:
+          - boxingnguyen@gmail.com
+          - minhthu.ng8@gmail.com
+      firebase:
+        firebase_token: Encrypted(Z0FBQUFBQmhpMl9HTUZnRldST3BVdDdtN0syQjJMenhLV1Q5YVdCcEw3T0FnR2R6ZzB3OGZGa3lGQ2dvbkdMbzBNUHBSYUlHX19VOGpTb21SMFpncXczRlYyT0oxVUxxbXhDR2kyU2VKOV9VdGFyTVB3WTlidzg2SktGbGRnMmp1aGk0b196bG9ibERPTVA5SHJLWUtIdzlXMmFWMjVINzZQVW13dUY5ZGl5cUQxdUVKZDRHUHV0cHFORkUyVzVQOTR5Y1RNbW1JSk5DUHR1VXFManFPSk40am9jT0N1WjFLZz09)
+        ios:
+          app_id: 1:869379399913:ios:4590a4bfa1eadf30731078
+          groups:
+            - first-group
+        android:
+          app_id: 1:869379399913:android:b3fbff2e6eabd6f4731078
+          groups:
+            - first-group
+          artifact_type: apk

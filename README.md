@@ -1,7 +1,6 @@
-# my_app
-test
+# base_app
 
-A new Flutter project.
+A Flutter base project base on Provider.
 
 ## Getting Started
 
